@@ -15,3 +15,11 @@ jobs:
           fetch-depth: 0
       - name: Conventional commit check
         uses: cocogitto/cocogitto-action@v3
+        conventional-commit-check:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Conventional commit check
+              uses: cocogitto/cocogitto-action@v3
