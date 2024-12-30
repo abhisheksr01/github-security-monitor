@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { HealthResponseDTO } from './entity/HealthResponse.dto';
+import { HealthResponseDTO } from './dto/healthresponse.dto';
 
 describe('AppController', () => {
   let appController: AppController;
