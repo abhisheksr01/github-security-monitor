@@ -17,8 +17,10 @@ describe('AppController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/health')
       .expect(200)
-      .expect('Hello World!');
+      .expect(
+        '{"status":200,"message":"The github-security-monitor app is running"}',
+      );
   });
 });

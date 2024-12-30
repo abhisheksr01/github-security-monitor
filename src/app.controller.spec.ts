@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { HealthResponseDTO } from './entity/HealthResponse.dto';
 
 describe('AppController', () => {
   let appController: AppController;
@@ -14,9 +15,14 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('AppController', () => {
+    it('should return "The github-security-monitor app is running" & status 200', () => {
+      const actualResponse: HealthResponseDTO = appController.getHealth();
+
+      expect(actualResponse.message).toBe(
+        'The github-security-monitor app is running',
+      );
+      expect(actualResponse.status).toBe(200);
     });
   });
 });

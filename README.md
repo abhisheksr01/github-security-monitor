@@ -45,6 +45,22 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+### API Endpoints
+
+- Health Endpoint
+  
+  The health endpoint can be accessed at:
+  
+  ```bash
+  http://localhost:3000/health
+  ```
+
+- Swagger API Documentation can be accessed at:
+  
+  ```bash
+  http://localhost:3000/api
+  ```
+
 ## Run tests
 
 ```bash
