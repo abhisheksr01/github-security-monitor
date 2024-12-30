@@ -1,0 +1,3 @@
+misconfigurations:
+  - id: AVD-DS-0002
+    statement: chainguard images run as nonbody/no-root user by default with UID 65532
