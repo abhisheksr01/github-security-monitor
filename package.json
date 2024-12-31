@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "test:bdd": "cucumber-js --require test/acceptance/step-definitions/*.ts test/acceptance/features/*.feature",
+    "test:bdd": "npx cucumber-js && node generate-report.js",
     "pre-commit-check": "npm ci && npm audit && npm run lint:fix && npm run test:unit && npm run test:e2e && npm run test:bdd && npm run build"
   },
   "dependencies": {
@@ -42,6 +42,7 @@
     "@types/supertest": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
+    "cucumber-html-reporter": "^6.0.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
