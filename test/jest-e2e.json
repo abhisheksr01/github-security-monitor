@@ -5,5 +5,16 @@
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
-  }
+  },
+  "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "publicPath": "./reports",
+          "filename": "jest-e2etest-report.html",
+          "expand": true
+        }
+      ]
+    ]
 }

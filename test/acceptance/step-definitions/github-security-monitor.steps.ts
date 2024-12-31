@@ -1,4 +1,3 @@
-// test/health.steps.ts
 import { Given, When, Then, After } from '@cucumber/cucumber';
 import * as supertest from 'supertest';
 import { INestApplication } from '@nestjs/common';
@@ -34,7 +33,6 @@ Then('the response status should be {int}', (statusCode: number) => {
 
 // Check the response body
 Then(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   'the response should contain {string} with value {string}',
   (key: string, value: string) => {
     if (response.body[key] !== value) {
@@ -46,7 +44,6 @@ Then(
 );
 
 Then(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   'the response should contain {string} with value {string} and {string} with value {string}',
   function (
     statusKey: string,
