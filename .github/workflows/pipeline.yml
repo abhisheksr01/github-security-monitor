@@ -31,6 +31,8 @@ jobs:
         run: npm run test:unit
       - name: Run E2E Test
         run: npm run test:e2e
+      - name: Run CucumberJS BDD Test
+        run: npm run test:bdd
   sast-dependency-code:
     runs-on: ubuntu-latest
     needs: conventional-commit-check

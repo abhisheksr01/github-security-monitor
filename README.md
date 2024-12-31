@@ -65,10 +65,13 @@ $ npm run start:prod
 
 ```bash
 # unit tests
-$ npm run test
+$ npm run test:unit
 
 # e2e tests
 $ npm run test:e2e
+
+# bdd tests
+$ npm run test:bdd
 
 # test coverage
 $ npm run test:cov

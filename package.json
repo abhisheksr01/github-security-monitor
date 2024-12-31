@@ -1,7 +1,7 @@
 {
   "name": "github-security-monitor",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "This API generates alerts based on github webhook security alerts.",
   "author": "abhisheksr01",
   "private": true,
   "license": "UNLICENSED",
@@ -19,7 +19,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "pre-commit-check": "npm ci && npm audit && npm run lint:fix && npm run test:unit && npm run test:e2e && npm run build"
+    "test:bdd": "cucumber-js --require test/acceptance/step-definitions/*.ts test/acceptance/features/*.feature",
+    "pre-commit-check": "npm ci && npm audit && npm run lint:fix && npm run test:unit && npm run test:e2e && npm run test:bdd && npm run build"
   },
   "dependencies": {
     "@fastify/static": "^7.0.4",
@@ -31,9 +32,11 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^11.1.1",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
+    "@types/cucumber": "^6.0.1",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
     "@types/supertest": "^6.0.0",
@@ -48,7 +51,7 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   },
