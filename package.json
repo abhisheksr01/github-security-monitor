@@ -20,7 +20,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:bdd": "npx cucumber-js && node generate-report.js",
-    "pre-commit-check": "npm ci && npm audit && npm run lint:fix && npm run test:unit && npm run test:e2e && npm run test:bdd && npm run build"
+    "test": "npm run test:unit && npm run test:e2e && npm run test:bdd",
+    "pre-commit-check": "npm ci && npm audit && npm run lint:fix && npm run test && npm run build"
   },
   "dependencies": {
     "@fastify/static": "^7.0.4",
@@ -74,8 +75,8 @@
         }
       ]
     ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
+    "rootDir": "test",
+    "testRegex": "/unit/.*\\/.*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },

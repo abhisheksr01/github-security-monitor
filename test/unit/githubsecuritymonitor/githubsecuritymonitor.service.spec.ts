@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GithubSecurityMonitorService } from './githubsecuritymonitor.service';
+import { GithubSecurityMonitorService } from '../../../src/githubsecuritymonitor/githubsecuritymonitor.service';
 
 describe('GithubSecurityMonitorService', () => {
   let service: GithubSecurityMonitorService;
@@ -16,5 +16,11 @@ describe('GithubSecurityMonitorService', () => {
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+  });
+
+  it('should return app running message', () => {
+    expect(service.getHealth()).toBe(
+      'The github-security-monitor app is running',
+    );
   });
 });

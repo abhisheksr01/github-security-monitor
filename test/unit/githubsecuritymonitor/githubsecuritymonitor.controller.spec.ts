@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GithubSecurityMonitorController } from './githubsecuritymonitor.controller';
-import { GithubSecurityMonitorService } from './githubsecuritymonitor.service';
-import { HealthResponseDTO } from './dto/healthresponse.dto';
+import { HealthResponseDTO } from 'src/githubsecuritymonitor/dto/healthresponse.dto';
+import { GithubSecurityMonitorController } from '../../../src/githubsecuritymonitor/githubsecuritymonitor.controller';
+import { GithubSecurityMonitorService } from '../../../src/githubsecuritymonitor/githubsecuritymonitor.service';
 
 describe('githubSecurityMonitorController', () => {
   let githubSecurityMonitorController: GithubSecurityMonitorController;
