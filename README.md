@@ -29,20 +29,20 @@
 ## Project setup
 
 ```bash
-$ npm install
+npm install
 ```
 
 ## Compile and run the project
 
 ```bash
 # development
-$ npm run start
+npm run start
 
 # watch mode
-$ npm run start:dev
+npm run start:dev
 
 # production mode
-$ npm run start:prod
+npm run start:prod
 ```
 
 ### API Endpoints
@@ -52,7 +52,7 @@ $ npm run start:prod
   The health endpoint can be accessed at:
   
   ```bash
-  http://localhost:3000/health
+  http://localhost:3000/githubsecuritymonitor/health
   ```
 
 - Swagger API Documentation can be accessed at:
@@ -63,18 +63,21 @@ $ npm run start:prod
 
 ## Run tests
 
+Execute unit, e2e and acceptance tests
+```bash
+npm run test
+```
+
+To execute individual test types as below:
 ```bash
 # unit tests
-$ npm run test:unit
+npm run test:unit
 
 # e2e tests
-$ npm run test:e2e
+npm run test:e2e
 
-# bdd tests
-$ npm run test:bdd
-
-# test coverage
-$ npm run test:cov
+# bdd acceptance tests
+npm run test:bdd
 ```
 
 ## Deployment
@@ -84,8 +87,8 @@ When you're ready to deploy your NestJS application to production, there are som
 If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
 ```bash
-$ npm install -g mau
-$ mau deploy
+npm install -g mau
+mau deploy
 ```
 
 With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
