@@ -1,11 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
 import { ApiResponse } from '@nestjs/swagger';
 import { HealthResponseDTO } from './dto/healthresponse.dto';
+import { GithubSecurityMonitorService } from './githubsecuritymonitor.service';
 
-@Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+@Controller('githubsecuritymonitor')
+export class GithubSecurityMonitorController {
+  constructor(
+    private readonly githubSecurityMonitorService: GithubSecurityMonitorService,
+  ) {}
 
   @Get('/health')
   @ApiResponse({
@@ -20,7 +22,7 @@ export class AppController {
   getHealth(): HealthResponseDTO {
     return {
       status: 200,
-      message: this.appService.getHello(),
+      message: this.githubSecurityMonitorService.getHealth(),
     };
   }
 }

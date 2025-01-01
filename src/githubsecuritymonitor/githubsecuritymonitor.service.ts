@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class AppService {
-  getHello(): string {
+export class GithubSecurityMonitorService {
+  getHealth(): string {
     return 'The github-security-monitor app is running';
   }
 }
